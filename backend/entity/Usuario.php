@@ -9,6 +9,8 @@ class Usuario {
     private $dataCriacao;
     private $dataAtualizacao;
     private $token;
+
+    private $grupoUsuario;
    
     public function __construct($id, $nomeUsuario, $senha, $email, $grupoUsuarioID, $token, $dataCriacao = null, $dataAtualizacao = null) {
         $this->id = $id;
@@ -57,6 +59,21 @@ class Usuario {
     public function getToken() {
         return $this->token;
     }
+
+    public function getGrupoUsuario() {
+        return $this->grupoUsuario;
+    }
+
+    public function setGrupoUsuario($grupoUsuario) {
+        return $this->grupoUsuario = $grupoUsuario;
+    }
+
+
+    public function __toString() {
+        return "UsuarioID: $this->id, Nome: $this->nomeUsuario, Email: $this->email";
+    }
+
+
 }
 
 ?>
